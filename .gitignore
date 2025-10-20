@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+OpenRLHF/mj_scripts/~/triton-cache/
 
 # C extensions
 *.so
