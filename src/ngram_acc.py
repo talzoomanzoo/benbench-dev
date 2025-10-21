@@ -22,6 +22,11 @@ math_dataset_names = [
     "orgn-MATH-test",
 ]
 
+ours_dataset_names = [
+    "ours",
+    "ours-rewritten"
+]
+
 
 
 if __name__ == "__main__":
@@ -41,6 +46,8 @@ if __name__ == "__main__":
         dataset_names = gsm8k_dataset_names
     elif args.dataset_name == "math":
         dataset_names = math_dataset_names
+    elif args.dataset_name == "ours":
+        dataset_names = ours_dataset_names
     else:
         raise ValueError("Invalid dataset")
 
