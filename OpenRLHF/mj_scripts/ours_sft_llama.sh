@@ -9,12 +9,12 @@ export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128,expandable_segments:True
 deepspeed --num_gpus 4 --module openrlhf.cli.train_sft \
    --max_len=32768 \
    --dataset=talzoomanzoo/target_math \
-   --input_key=Question \
+   --input_key=question \
    --output_key=answer \
    --train_batch_size=8 \
    --micro_train_batch_size=1 \
-   --pretrain=deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B \
-   --save_path=./checkpoint/ours-full-tuned \
+   --pretrain=meta-llama/Llama-3.2-1B \
+   --save_path=./checkpoint/ours-full-tuned-llama \
    --packing_samples \
    --flash_attn \
    --logging_steps=1 \
@@ -27,4 +27,4 @@ deepspeed --num_gpus 4 --module openrlhf.cli.train_sft \
    --use_wandb=True \
    --wandb_org=mjgwak \
    --wandb_project=benbench-contamination-check-reference\
-   --wandb_run_name=ours-full-tuned-$(date +%m%d%H%M)
+   --wandb_run_name=ours-full-tuned-llama-$(date +%m%d%H%M)
